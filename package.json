@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-mtj",
+  "version": "1.0.0",
+  "description": "mtj cordova plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jianling/cordova-plugin-mtj.git"
+  },
+  "cordova": {
+    "id": "cordova-plugin-mtj",
+    "platforms": [
+      "browser",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "mtj"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "jianling",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/jianling/cordova-plugin-mtj/issues"
+  },
+  "homepage": "https://github.com/jianling/cordova-plugin-mtj#readme"
+}

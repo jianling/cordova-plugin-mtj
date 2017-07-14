@@ -5,28 +5,28 @@
 }
 
 - (void)eventStart:(CDVInvokedUrlCommand*)command {
-    NSString *eventStart = [command.arguments objectAtIndex:0];
+    NSString *eventId = [command.arguments objectAtIndex:0];
     NSString *eventLabel = [command.arguments objectAtIndex:1];
-    [[BaiduMobStat defaultStat] eventStart:eventStart eventLabel:eventLabel];
+    [[BaiduMobStat defaultStat] eventStart:eventId eventLabel:eventLabel];
 }
 
 - (void)eventEnd:(CDVInvokedUrlCommand*)command {
-    NSString *eventStart = [command.arguments objectAtIndex:0];
+    NSString *eventId = [command.arguments objectAtIndex:0];
     NSString *eventLabel = [command.arguments objectAtIndex:1];
-    [[BaiduMobStat defaultStat] eventStart:eventStart eventLabel:eventLabel];
+    [[BaiduMobStat defaultStat] eventEnd:eventId eventLabel:eventLabel];
 }
 
 - (void)logEvent:(CDVInvokedUrlCommand*)command {
-    NSString *eventStart = [command.arguments objectAtIndex:0];
+    NSString *eventId = [command.arguments objectAtIndex:0];
     NSString *eventLabel = [command.arguments objectAtIndex:1];
-    [[BaiduMobStat defaultStat] eventStart:eventStart eventLabel:eventLabel];
+    [[BaiduMobStat defaultStat] logEvent:eventId eventLabel:eventLabel];
 }
 
 - (void)logEventWithDurationTime:(CDVInvokedUrlCommand*)command {
-    NSString *eventStart = [command.arguments objectAtIndex:0];
+    NSString *eventId = [command.arguments objectAtIndex:0];
     NSString *eventLabel = [command.arguments objectAtIndex:1];
     unsigned long durationTime = [command.arguments objectAtIndex:2];
-    [[BaiduMobStat defaultStat] logEventWithDurationTime:eventStart eventLabel:eventLabel durationTime:durationTime];
+    [[BaiduMobStat defaultStat] logEventWithDurationTime:eventId eventLabel:eventLabel durationTime:durationTime];
 }
 
 - (void)pageviewStartWithName:(CDVInvokedUrlCommand*)command {

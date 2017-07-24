@@ -29,7 +29,7 @@
         <keywords>cordova,mtj</keywords>
 
         <engines>
-                <engine name="cordova" version=">=3.0.0" />
+            <engine name="cordova" version=">=3.0.0" />
         </engines>
 
         <js-module src="www/mtj.js" name="mtj">
@@ -77,6 +77,67 @@
                     <merges target="" />
             </js-module>
 
+        </platform>
+
+        <!--android -->
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="CDVMTJ">
+                    <param name="android-package" value="com.baidu.CDVMTJ"/>
+                </feature>
+            </config-file>
+
+            <config-file target="AndroidManifest.xml" parent="/manifest">
+                <uses-permission android:name="android.permission.INTERNET" />
+                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+                <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+                <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+                <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+                <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                <uses-permission android:name="android.permission.GET_TASKS" />
+                <uses-permission android:name="android.permission.BLUETOOTH" />
+                <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+                <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+                <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+                <!-- APP_KEY -->
+                <meta-data
+                    android:name="BaiduMobAd_STAT_ID"
+                    android:value="da80de16db" />
+                <!-- 渠道商编号 -->
+                <meta-data
+                    android:name="BaiduMobAd_CHANNEL"
+                    android:value="BCE Portal" />
+
+                <!-- 是否开启错误日志统计，默认为false -->
+                <meta-data
+                    android:name="BaiduMobAd_EXCEPTION_LOG"
+                    android:value="true" />
+                <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+                <meta-data
+                    android:name="BaiduMobAd_SEND_STRATEGY"
+                    android:value="APP_START" />
+                <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
+                <!-- <meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="2" /> -->
+                <!-- 日志仅在wifi网络下发送，默认为false -->
+                <meta-data
+                    android:name="BaiduMobAd_ONLY_WIFI"
+                    android:value="false" />
+                <!-- 是否获取基站位置信息 ,默认为true -->
+                <meta-data
+                    android:name="BaiduMobAd_CELL_LOCATION"
+                    android:value="true" />
+                <!-- 是否获取GPS位置信息，默认为true -->
+                <meta-data
+                    android:name="BaiduMobAd_GPS_LOCATION"
+                    android:value="true" />
+                <!-- 是否获取WIFI位置信息，默认为true -->
+                <meta-data
+                    android:name="BaiduMobAd_WIFI_LOCATION"
+                    android:value="true" />
+            </config-file>
+
+            <source-file src="src/android/CDVMTJ.java" target-dir="src/com/baidu" />
         </platform>
 
 </plugin>
